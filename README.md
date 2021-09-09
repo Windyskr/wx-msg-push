@@ -22,11 +22,11 @@
 
 ## 部署运行
 
-1. 推荐直接从 releases 中下载预编译的包。或 clone 本项目后执行编译 `make build`，编译其它平台参考 `Makefile`。或者 `go get -u github.com/zyh94946/wx-msg-push` 直接安装可执行文件至 `$GOPATH/bin`。
+1. 推荐直接从 releases 中下载预编译的压缩包，解压后你会得到两个文件。或 clone 本项目后执行编译 `make build`，编译其它平台参考 `Makefile`。或者 `go get -u github.com/zyh94946/wx-msg-push` 直接安装可执行文件至 `$GOPATH/bin`。
 
 2. 修改配置文件 `config.toml`, 中的运行端口、企业微信配置。
 
-3. 运行 `wx-msg-push server -c config.toml`
+3. 运行 `wx-msg-push server -c config.toml` 
 
 请自行处理进程守护，包括不限于以下方式
 
@@ -37,6 +37,11 @@
 - `crontab`
 - `service`
 
+可以尝试
+`nohup wx-msg-push server -c config.toml`
+
+想关闭`ps -ef|grep wx-msg-push`，得到进程号，再`kill 进程号`。
+
 ## 使用方法
 
 使用方法和返回结果和云函数版一致。请自行处理域名绑定和转发。
@@ -44,6 +49,7 @@
 消息类型值：`text` 代表文本消息，`mpnews` 代表图文消息。为兼容旧版本，不传默认为图文消息。
 
 支持推送消息至指定的 `touser`, `toparty`, `totag`。~~不传默认设置 `touser=@all`~~
+你必须在[企业微信管理后台的通讯录管理中](https://work.weixin.qq.com/wework_admin/frame#contacts)或手机 App 中找到你的账号并且填写。
 
 GET方式
 
@@ -63,6 +69,7 @@ $ curl --location --request POST 'http://ip:port/CORP_SECRET' \
 
 发送失败问题排查：
 
+- 是否正确的配置了用户名
 - 请检查配置是否正确
 - 请检查发送url中CORP_SECRET是否正确
 - 根据返回结果、日志找原因
