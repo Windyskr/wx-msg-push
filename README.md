@@ -43,7 +43,7 @@
 
 消息类型值：`text` 代表文本消息，`mpnews` 代表图文消息。为兼容旧版本，不传默认为图文消息。
 
-支持推送消息至指定的 `touser`, `toparty`, `totag`。不传默认设置 `touser=@all`
+支持推送消息至指定的 `touser`, `toparty`, `totag`。~~不传默认设置 `touser=@all`~~
 
 GET方式
 
