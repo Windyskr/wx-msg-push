@@ -5,6 +5,7 @@ addr = ":8777" # 端口
 maxhttptime = "5s" # 秒
 
 # 企业微信配置 可配多个应用
+# 下方的 you_corp1_secret 为你的推送url中的 CORP_SECRET ，可以随意更改。
 [wechatconf.you_corp1_secret]
 corpid = "ww987654321" # 企业id
 corpsecret = "you_corp1_secret" # 应用Secret
@@ -13,6 +14,7 @@ mediaid = "" # 图片素材的media_id(如果仅使用文本消息可随意填�
 enableduplicatecheck = 0 # 是否开启重复消息检测 1:开 0:关
 duplicatecheckinterval = 0 # 重复消息时间间隔 单位秒
 
+# 如果你不需要，直接删除下方所有。
 [wechatconf.you_corp2_secret]
 corpid = "ww987654322" # 企业id
 corpsecret = "you_corp2_secret" # 应用Secret
