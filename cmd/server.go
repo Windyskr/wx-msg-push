@@ -90,7 +90,7 @@ func GoSendMsg(c *gin.Context) {
 	}
 
 	if msg.ToUser == "" && msg.ToParty == "" && msg.ToTag == "" {
-		msg.ToUser = "@all"
+		
 	}
 
 	weChatConf := cfg.WeChatConf[msg.SECRET]
